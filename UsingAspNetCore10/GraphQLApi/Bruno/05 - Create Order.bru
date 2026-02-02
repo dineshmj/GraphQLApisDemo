@@ -1,0 +1,38 @@
+meta {
+  name: 05 - Create Order
+  type: graphql
+  seq: 10
+}
+
+post {
+  url: https://localhost:49935/graphql
+  body: graphql
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{VAR_JWT}}
+}
+
+body:graphql {
+  mutation {
+    createOrder(
+      customerName: "Training User"
+      productIds: [1,2,3]
+    ) {
+      id
+      customerName
+      items {
+        product {
+          name
+        }
+        quantity
+      }
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

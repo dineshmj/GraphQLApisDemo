@@ -1,0 +1,20 @@
+meta {
+  name: 00 - Get Auth Token - Admin Role
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://localhost:49935/auth/token?userName=alice
+  body: none
+  auth: inherit
+}
+
+params:query {
+  userName: alice
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,20 @@
+meta {
+  name: 00 - Unauthorized
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://localhost:49935/auth/token?userName=will
+  body: none
+  auth: inherit
+}
+
+params:query {
+  userName: will
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

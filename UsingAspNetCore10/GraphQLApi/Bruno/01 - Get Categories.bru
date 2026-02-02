@@ -1,0 +1,33 @@
+meta {
+  name: 01 - Get Categories
+  type: graphql
+  seq: 6
+}
+
+post {
+  url: https://localhost:49935/graphql
+  body: graphql
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{VAR_JWT}}
+}
+
+body:graphql {
+   query {
+     categories {
+       id
+       name
+       products {
+         id
+         name
+       }
+     }
+   }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

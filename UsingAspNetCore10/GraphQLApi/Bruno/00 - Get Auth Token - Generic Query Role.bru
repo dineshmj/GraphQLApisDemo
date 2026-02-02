@@ -1,0 +1,20 @@
+meta {
+  name: 00 - Get Auth Token - Generic Query Role
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://localhost:49935/auth/token?userName=bob
+  body: none
+  auth: inherit
+}
+
+params:query {
+  userName: bob
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

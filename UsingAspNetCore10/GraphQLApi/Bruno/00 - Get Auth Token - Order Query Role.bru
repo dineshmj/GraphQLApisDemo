@@ -1,0 +1,20 @@
+meta {
+  name: 00 - Get Auth Token - Order Query Role
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://localhost:49935/auth/token?userName=dave
+  body: none
+  auth: inherit
+}
+
+params:query {
+  userName: dave
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
