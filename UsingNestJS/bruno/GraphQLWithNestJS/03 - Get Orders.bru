@@ -1,0 +1,41 @@
+meta {
+  name: 03 - Get Orders
+  type: graphql
+  seq: 11
+}
+
+post {
+  url: http://localhost:3000/graphql
+  body: graphql
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{VAR_JWT}}
+}
+
+body:graphql {
+  query {
+    orders {
+      id
+      customerName
+      items {
+        id
+        quantity
+        product {
+          id
+          name
+          price
+          category {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
